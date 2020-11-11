@@ -16,10 +16,15 @@ func serveIP(w http.ResponseWriter, r *http.Request) {
 func serveHome(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Hello from home!")
 }
+func serveGreet(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	fmt.Fprintf(w, "Hello "+vars["name"])
+}
 func main() {
 	http.HandleFunc("/ip", serveIP)
 	router := mux.NewRouter()
 	router.HandleFunc("/", serveHome)
+	router.HandleFunc("/greet/{name}", serveGreet)
 	http.Handle("/", router)
 	s := &http.Server{
 		ReadTimeout:  60 * time.Second,
