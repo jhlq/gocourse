@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="/style.css">
 </head>
 <body>
-{{template "nav" .}}
+	{{template "nav" .}}
 	<main>
 		<h1>Island Enterprises</h1>
 		{{template "body" .}}
@@ -18,13 +18,13 @@
 {{end}}
 
 {{define "navlist"}}
-	<nav>
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/about/">About</a></li>
-			<li><a href="/contact/">Contact</a></li>
-		</ul>
-	</nav>
+<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/about/">About</a></li>
+		<li><a href="/contact/">Contact</a></li>
+	</ul>
+</nav>
 {{end}}
 {{define "nav"}}
 <header>

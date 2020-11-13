@@ -52,6 +52,9 @@ func main() {
 	router.HandleFunc("/greet/{name}", serveGreet)
 	router.HandleFunc("/about/", serveAbout)
 	router.HandleFunc("/contact/", serveContact)
+	router.HandleFunc("/style.css", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "style.css")
+	})
 	http.Handle("/", router)
 	s := &http.Server{
 		ReadTimeout:  60 * time.Second,
