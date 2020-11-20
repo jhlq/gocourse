@@ -1,0 +1,42 @@
+{{define "base"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>{{template "title" .}} | Island Enterprises</title>
+	<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+	{{template "nav" .}}
+	<main>
+		<h1>Island Enterprises</h1>
+		{{template "body" .}}
+	</main>
+	{{template "footer" .}}
+</body>
+</html>
+{{end}}
+
+{{define "navlist"}}
+<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/chat/">Chat</a></li>
+		<li><a href="/about/">About</a></li>
+		<li><a href="/contact/">Contact</a></li>
+	</ul>
+</nav>
+{{end}}
+{{define "nav"}}
+<header>
+	{{template "navlist"}}
+</header> 
+{{end}}
+{{define "footer"}}
+<footer class="footer">
+	<p><small>
+		Islands are peaceful.
+	</small></p>
+	{{template "navlist"}}
+</footer> 
+{{end}}
