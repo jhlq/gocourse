@@ -12,6 +12,7 @@ import (
 )
 
 var tm map[string]*template.Template
+var dbclient = getClient()
 
 func inittm() {
 	tm = make(map[string]*template.Template)
@@ -62,7 +63,6 @@ func handleChatMessage(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(err)
 		return
 	}
-	dbclient := getClient()
 	var msg message
 	msg.Message = r.PostForm["message"][0]
 	msg.Author = "Anonymous"
