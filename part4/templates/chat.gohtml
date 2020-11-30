@@ -1,0 +1,12 @@
+{{define "title"}}Home{{end}}
+{{define "body"}}
+    <h1>Welcome to the chat app, {{ .Name }}</h1>
+	<form action="/chat/" method="POST">
+        <input type="text" name="message" placeholder="Message" autofocus autocomplete="off">
+        <input type="submit" name="submit-btn" value="Send">
+	</form>
+	{{range .Msgs}}
+		{{.Author}} said "{{.Message}}" at {{.Time}}<br>
+	{{end}}
+{{end}}
+
