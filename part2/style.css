@@ -22,6 +22,11 @@ nav li a:hover {
 	background-color: blue;
 }
 
+html {
+	position: relative;
+	min-height: 100%;
+}
+
 body {
 	margin: 0 0 100px;
 }
